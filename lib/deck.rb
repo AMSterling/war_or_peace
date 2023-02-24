@@ -19,8 +19,9 @@ class Deck
     (high_ranking_cards.count.to_f /  cards.count.to_f * 100).round(2)
   end
 
-  def remove_card(card)
-    cards.delete_if { |i| i == card }
+  def remove_card
+    # cards.delete_if { |i| i == card }
+    cards.shift
   end
 
   def add_card(card)

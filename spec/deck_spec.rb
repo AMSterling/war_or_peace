@@ -41,7 +41,7 @@ RSpec.describe Deck do
   it 'removes and adds cards to the deck' do
     card4 = Card.new(:club, '5', 5)
 
-    deck.remove_card(card1)
+    deck.remove_card
 
     expect(deck.cards).to eq([card2, card3])
     expect(deck.high_ranking_cards).to eq([card3])
