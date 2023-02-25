@@ -1,5 +1,3 @@
-require 'pry'
-
 class Deck
   attr_reader :cards
 
@@ -8,7 +6,7 @@ class Deck
   end
 
   def rank_of_card_at(index)
-    cards[index].rank
+    cards[index].rank unless cards[index].nil?
   end
 
   def high_ranking_cards

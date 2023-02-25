@@ -1,5 +1,3 @@
-require 'pry'
-
 class Turn
   attr_reader :player1, :player2, :spoils_of_war
 
@@ -28,9 +26,9 @@ class Turn
         player2
       end
     else :war
-      if player1.deck.rank_of_card_at(2) > player2.deck.rank_of_card_at(2)
+      if player2.deck.cards.count < 3 || (player1.deck.rank_of_card_at(2) > player2.deck.rank_of_card_at(2))
         player1
-      else player1.deck.rank_of_card_at(2) < player2.deck.rank_of_card_at(2)
+      else player1.deck.cards.count < 3 || (player1.deck.rank_of_card_at(2) < player2.deck.rank_of_card_at(2))
         player2
       end
     end

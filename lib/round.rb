@@ -29,7 +29,7 @@ class Round
       'Ace' => 14
     }
     suits.flat_map do |suit|
-      ranks.map { |rank, value| deck << Card.new(suit, rank, value) }
+      ranks.map { |rank, value| deck << Card.new(suit, value, rank) }
     end
     deck.shuffle
   end
@@ -52,10 +52,9 @@ class Round
     until @turn.player1.has_lost? || @turn.player2.has_lost? || counter  == 10_000
       turn = @turn
       counter += 1
-      type = turn.type
       winner = turn.winner
       turn.pile_cards
-      message(counter, winner, type, turn)
+      message(counter, winner, turn)
       winner?(counter, turn)
     end
   end
@@ -70,8 +69,8 @@ class Round
     end
   end
 
-  def message(counter, winner, type, turn)
-    case type
+  def message(counter, winner, turn)
+    case turn.type
     when :mutually_assured_destruction
       puts "Turn #{counter} * Mutually Assured Destruction * 6 cards removed from play,
       #{@player1.name} #{@player1.deck.cards.count}  -  #{@player2.name} #{@player2.deck.cards.count}"

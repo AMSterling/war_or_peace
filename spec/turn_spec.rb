@@ -3,7 +3,6 @@ require './lib/card'
 require './lib/deck'
 require './lib/player'
 require './lib/turn'
-require 'pry'
 
 RSpec.describe Turn do
   let(:card1) { Card.new(:hearts, 'Jack', 11) }
