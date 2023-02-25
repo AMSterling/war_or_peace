@@ -61,8 +61,9 @@ class Turn
   end
 
   def award_spoils(winner)
-    winner.deck.cards << @spoils_of_war
+    spoils_of_war.each do |card|
+      winner.deck.add_card(card)
+    end
     @spoils_of_war = []
-    winner.deck.cards.flatten!
   end
 end
