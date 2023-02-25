@@ -39,7 +39,7 @@ class Turn
   def pile_cards
     case type
     when :mutually_assured_destruction
-      2.times do
+      3.times do
         player1.deck.remove_card
         player2.deck.remove_card
       end
@@ -55,8 +55,8 @@ class Turn
   end
 
   def award_spoils(winner)
-    winner.deck.cards << spoils_of_war
-    spoils_of_war = []
+    winner.deck.cards << @spoils_of_war
+    @spoils_of_war = []
     winner.deck.cards.flatten!
   end
 end

@@ -100,7 +100,7 @@ RSpec.describe Turn do
     let(:deck1) { Deck.new([card1, card2, card5, card8]) }
     let(:deck2) { Deck.new([card4, card3, card6, card7]) }
 
-    it 'is a war type of turn' do
+    it 'is a mutually assured destruction type of turn' do
 
       expect(turn.type).to eq(:mutually_assured_destruction)
     end
@@ -115,8 +115,8 @@ RSpec.describe Turn do
 
       turn.award_spoils(winner)
 
-      expect(player1.deck.cards).to eq([card5, card8])
-      expect(player2.deck.cards).to eq([card6, card7])
+      expect(player1.deck.cards).to eq([card8])
+      expect(player2.deck.cards).to eq([card7])
     end
   end
 end
