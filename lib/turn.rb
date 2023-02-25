@@ -20,21 +20,21 @@ class Turn
   def winner
     case type
     when :mutually_assured_destruction
-      if player2.deck.cards.count < 3
+      if player2.deck.rank_of_card_at(2).nil?
         player1
-      else player1.deck.cards.count < 3
+      else player1.deck.rank_of_card_at(2).nil?
         player2
       end
-    when :basic
+    when :war
+      if player2.deck.rank_of_card_at(2).nil? || (player1.deck.rank_of_card_at(2) > player2.deck.rank_of_card_at(2))
+        player1
+      else player1.deck.rank_of_card_at(2).nil? || (player1.deck.rank_of_card_at(2) < player2.deck.rank_of_card_at(2))
+        player2
+      end
+    else :basic
       if player1.deck.rank_of_card_at(0) > player2.deck.rank_of_card_at(0)
         player1
       else player1.deck.rank_of_card_at(0) < player2.deck.rank_of_card_at(0)
-        player2
-      end
-    else :war
-      if player2.deck.cards.count < 3 || (player1.deck.rank_of_card_at(2) > player2.deck.rank_of_card_at(2))
-        player1
-      else player1.deck.cards.count < 3 || (player1.deck.rank_of_card_at(2) < player2.deck.rank_of_card_at(2))
         player2
       end
     end

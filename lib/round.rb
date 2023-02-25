@@ -35,10 +35,11 @@ class Round
   end
 
   def intro
-    p "Welcome to War! (or Peace) This game will be played with #{card_deck.count} cards."
-    p "The players today are #{@player1.name} and #{@player2.name}"
-    p "Type 'go' to start the game!"
-    p '------------------------------------------------------------------'
+    puts '------------------------------------------------------------------'
+    puts "Welcome to War! (or Peace) This game will be played with #{card_deck.count} cards."
+    puts "The players today are #{@player1.name} and #{@player2.name}"
+    puts "Type 'go' to start the game!"
+    puts '------------------------------------------------------------------'
     phrase = gets.chomp
     if phrase != 'go'
       intro
