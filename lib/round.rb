@@ -12,7 +12,7 @@ class Round
 
   def card_deck
     deck = []
-    suits = %i[club diamond heart spade]
+    suits = %i[clubs diamonds hearts spades]
     ranks = {
       '2' => 2,
       '3' => 3,

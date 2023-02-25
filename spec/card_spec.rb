@@ -2,7 +2,7 @@ require 'rspec'
 require './lib/card'
 
 RSpec.describe Card do
-  let(:card) { Card.new(:diamond, 'Queen', 12) }
+  let(:card) { Card.new(:diamonds, 'Queen', 12) }
 
   it 'exists' do
 
@@ -11,7 +11,7 @@ RSpec.describe Card do
 
   it 'has readable attributes' do
 
-    expect(card.suit).to eq(:diamond)
+    expect(card.suit).to eq(:diamonds)
     expect(card.value).to eq('Queen')
     expect(card.rank).to eq(12)
   end

@@ -4,9 +4,9 @@ require './lib/deck'
 require './lib/player'
 
 RSpec.describe Player do
-  let(:card1) { Card.new(:diamond, 'Queen', 12) }
-  let(:card2) { Card.new(:spade, '3', 3) }
-  let(:card3) { Card.new(:heart, 'Ace', 14) }
+  let(:card1) { Card.new(:diamonds, 'Queen', 12) }
+  let(:card2) { Card.new(:spades, '3', 3) }
+  let(:card3) { Card.new(:hearts, 'Ace', 14) }
   let(:deck) { Deck.new([card1, card2, card3]) }
   let(:player) { Player.new('Clarisa', deck) }
 

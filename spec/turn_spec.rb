@@ -6,14 +6,14 @@ require './lib/turn'
 require 'pry'
 
 RSpec.describe Turn do
-  let(:card1) { Card.new(:heart, 'Jack', 11) }
-  let(:card2) { Card.new(:heart, '10', 10) }
-  let(:card3) { Card.new(:heart, '9', 9) }
-  let(:card4) { Card.new(:diamond, 'Jack', 11) }
-  let(:card5) { Card.new(:heart, '8', 8) }
-  let(:card6) { Card.new(:diamond, 'Queen', 12) }
-  let(:card7) { Card.new(:heart, '3', 3) }
-  let(:card8) { Card.new(:diamond, '2', 2) }
+  let(:card1) { Card.new(:hearts, 'Jack', 11) }
+  let(:card2) { Card.new(:hearts, '10', 10) }
+  let(:card3) { Card.new(:hearts, '9', 9) }
+  let(:card4) { Card.new(:diamonds, 'Jack', 11) }
+  let(:card5) { Card.new(:hearts, '8', 8) }
+  let(:card6) { Card.new(:diamonds, 'Queen', 12) }
+  let(:card7) { Card.new(:hearts, '3', 3) }
+  let(:card8) { Card.new(:diamonds, '2', 2) }
   let(:player1) { Player.new("Megan", deck1) }
   let(:player2) { Player.new("Aurora", deck2) }
   let(:turn) { Turn.new(player1, player2) }
@@ -96,7 +96,7 @@ RSpec.describe Turn do
   end
 
   context 'mutually assured destruction' do
-    let(:card6) { Card.new(:diamond, '8', 8) }
+    let(:card6) { Card.new(:diamonds, '8', 8) }
     let(:deck1) { Deck.new([card1, card2, card5, card8]) }
     let(:deck2) { Deck.new([card4, card3, card6, card7]) }
 

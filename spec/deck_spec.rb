@@ -3,9 +3,9 @@ require './lib/card'
 require './lib/deck'
 
 RSpec.describe Deck do
-  let(:card1) { Card.new(:diamond, 'Queen', 12) }
-  let(:card2) { Card.new(:spade, '3', 3) }
-  let(:card3) { Card.new(:heart, 'Ace', 14) }
+  let(:card1) { Card.new(:diamonds, 'Queen', 12) }
+  let(:card2) { Card.new(:spades, '3', 3) }
+  let(:card3) { Card.new(:hearts, 'Ace', 14) }
   let(:cards) { [card1, card2, card3] }
   let(:deck) { Deck.new(cards) }
 
@@ -39,7 +39,7 @@ RSpec.describe Deck do
   end
 
   it 'removes and adds cards to the deck' do
-    card4 = Card.new(:club, '5', 5)
+    card4 = Card.new(:clubs, '5', 5)
 
     deck.remove_card
 
