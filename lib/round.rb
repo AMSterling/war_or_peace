@@ -35,11 +35,11 @@ class Round
   end
 
   def intro
-    puts '------------------------------------------------------------------'
-    puts "Welcome to War! (or Peace) This game will be played with #{card_deck.count} cards."
-    puts "The players today are #{@player1.name} and #{@player2.name}"
-    puts "Type 'go' to start the game!"
-    puts '------------------------------------------------------------------'
+    puts '---------------------------------------------------------------------'
+    puts "  Welcome to War! (or Peace) This game will be played with #{card_deck.count} cards."
+    puts "  The players today are #{@player1.name} and #{@player2.name}"
+    puts "  Type 'go' to start the game!"
+    puts '---------------------------------------------------------------------'
     phrase = gets.chomp
     if phrase != 'go'
       intro
@@ -66,7 +66,7 @@ class Round
     elsif turn.player2.has_lost?
        puts "*~*~*~* #{@player1.name} has won the game! *~*~*~*"
     elsif  counter == 10_000 || (turn.player1.has_lost? && turn.player2.has_lost?)
-       puts '*~*~*~* draw *~*~*~*'
+       puts '*~*~*~* Peace Declared! *~*~*~*'
     end
   end
 
