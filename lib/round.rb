@@ -23,10 +23,10 @@ class Round
       '8' => 8,
       '9' => 9,
       '10' => 10,
-      'jack' => 11,
-      'queen' => 12,
-      'king' => 13,
-      'ace' => 14
+      'Jack' => 11,
+      'Queen' => 12,
+      'King' => 13,
+      'Ace' => 14
     }
     suits.flat_map do |suit|
       ranks.map { |rank, value| deck << Card.new(suit, rank, value) }
