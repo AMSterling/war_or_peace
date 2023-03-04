@@ -19,24 +19,24 @@ class Turn
 
   def winner
     case type
-    when :mutually_assured_destruction
-      if !player1.deck.rank_of_card_at(2).nil? && player2.deck.rank_of_card_at(2).nil?
-        player1
-      else !player2.deck.rank_of_card_at(2).nil? && player1.deck.rank_of_card_at(2).nil?
-        player2
-      end
     when :war
-      if (!player1.deck.rank_of_card_at(2).nil? && player2.deck.rank_of_card_at(2).nil?) ||
+      if (player1.deck.cards.count >= 3 && player2.deck.cards.count < 3) ||
         (player1.deck.rank_of_card_at(2) > player2.deck.rank_of_card_at(2))
         player1
-      else (!player2.deck.rank_of_card_at(2).nil? && player1.deck.rank_of_card_at(2).nil?) ||
+      elsif (player2.deck.cards.count >= 3 && player1.deck.cards.count < 3) ||
         (player1.deck.rank_of_card_at(2) < player2.deck.rank_of_card_at(2))
         player2
       end
-    else :basic
+    when :basic
       if player1.deck.rank_of_card_at(0) > player2.deck.rank_of_card_at(0)
         player1
-      else player1.deck.rank_of_card_at(0) < player2.deck.rank_of_card_at(0)
+      elsif player1.deck.rank_of_card_at(0) < player2.deck.rank_of_card_at(0)
+        player2
+      end
+    else
+      if player2.deck.cards.count == 0 && player1.deck.cards.count > 0
+        player1
+      elsif player1.deck.cards.count == 0 && player2.deck.cards.count > 0
         player2
       end
     end
@@ -51,8 +51,8 @@ class Turn
       end
     when :war
       3.times do
-        spoils_of_war << player1.deck.remove_card
-        spoils_of_war << player2.deck.remove_card
+        spoils_of_war << player1.deck.remove_card unless player1.deck.cards.empty?
+        spoils_of_war << player2.deck.remove_card unless player2.deck.cards.empty?
       end
     else :basic
       spoils_of_war << player1.deck.remove_card

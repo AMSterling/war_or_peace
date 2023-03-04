@@ -11,10 +11,10 @@ RSpec.describe Deck do
 
   it 'exists' do
 
-    expect(card1).to be_an_instance_of(Card)
-    expect(card2).to be_an_instance_of(Card)
-    expect(card3).to be_an_instance_of(Card)
-    expect(deck).to be_an_instance_of(Deck)
+    expect(card1).to be_an_instance_of Card
+    expect(card2).to be_an_instance_of Card
+    expect(card3).to be_an_instance_of Card
+    expect(deck).to be_an_instance_of Deck
   end
 
   it 'has an array of cards' do

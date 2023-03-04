@@ -12,11 +12,11 @@ RSpec.describe Player do
 
   it 'exists' do
 
-    expect(card1).to be_an_instance_of(Card)
-    expect(card2).to be_an_instance_of(Card)
-    expect(card3).to be_an_instance_of(Card)
-    expect(deck).to be_an_instance_of(Deck)
-    expect(player).to be_an_instance_of(Player)
+    expect(card1).to be_an_instance_of Card
+    expect(card2).to be_an_instance_of Card
+    expect(card3).to be_an_instance_of Card
+    expect(deck).to be_an_instance_of Deck
+    expect(player).to be_an_instance_of Player
   end
 
   it 'has readable attributes' do

@@ -13,8 +13,8 @@ RSpec.describe Turn do
   let(:card6) { Card.new(:diamonds, 'Queen', 12) }
   let(:card7) { Card.new(:hearts, '3', 3) }
   let(:card8) { Card.new(:diamonds, '2', 2) }
-  let(:player1) { Player.new("Megan", deck1) }
-  let(:player2) { Player.new("Aurora", deck2) }
+  let(:player1) { Player.new('Megan', deck1) }
+  let(:player2) { Player.new('Aurora', deck2) }
   let(:turn) { Turn.new(player1, player2) }
 
   context 'basic' do
@@ -23,13 +23,13 @@ RSpec.describe Turn do
 
     it 'exists' do
 
-      expect(deck1).to be_an_instance_of(Deck)
-      expect(deck1.cards).to be_all(Card)
-      expect(deck2).to be_an_instance_of(Deck)
-      expect(deck2.cards).to be_all(Card)
-      expect(player1).to be_an_instance_of(Player)
-      expect(player2).to be_an_instance_of(Player)
-      expect(turn).to be_an_instance_of(Turn)
+      expect(deck1).to be_an_instance_of Deck
+      expect(deck1.cards).to be_all Card
+      expect(deck2).to be_an_instance_of Deck
+      expect(deck2.cards).to be_all Card
+      expect(player1).to be_an_instance_of Player
+      expect(player2).to be_an_instance_of Player
+      expect(turn).to be_an_instance_of Turn
     end
 
     it 'has readable attributes' do

@@ -6,7 +6,7 @@ RSpec.describe Card do
 
   it 'exists' do
 
-    expect(card).to be_an_instance_of(Card)
+    expect(card).to be_an_instance_of Card
   end
 
   it 'has readable attributes' do
