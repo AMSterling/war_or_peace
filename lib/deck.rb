@@ -18,7 +18,6 @@ class Deck
   end
 
   def remove_card
-    # cards.delete_if { |i| i == card }
     cards.shift
   end
 
